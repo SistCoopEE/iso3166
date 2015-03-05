@@ -1,0 +1,24 @@
+<section data-ng-init="search()">
+    <h1>All countries as ISO-3166</h1>
+    <h2>Search here:</h2>
+    <form name="form" ng-submit="search(true)" novalidate>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" name="filterText" class="form-control" ng-model="filterOptions.filterText" autofocus>
+                        <span class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group pull-right">
+                    <a ui-sref="iso3166.createCountryCode" class="btn btn-success">New</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div ui-grid="gridOptions" ui-grid-selection ui-grid-pagination class="grid"></div>
+</section>
+
+

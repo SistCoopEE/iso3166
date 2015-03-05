@@ -1,0 +1,15 @@
+{
+  "name": "iso3166",
+  "version": "0.0.1",
+  "description": "Some description of iso3166",
+  "author": {
+    "name": "carlosthe19916"
+  },
+  "mean": "0.4.3",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.4.x"
+  },
+  "dependencies": {},
+  "license": "MIT"
+}

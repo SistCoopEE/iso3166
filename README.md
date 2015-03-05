@@ -1,2 +1,1 @@
-# iso3166
-iso3166
+README: iso3166

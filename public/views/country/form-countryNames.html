@@ -1,0 +1,71 @@
+<br/>
+<section data-ng-init="loadCountryNames()">
+    <form name="form" ng-submit="submit()" novalidate>
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>Create country name</h4>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group" ng-class="{ 'has-error' : form.language.$invalid && form.language.$dirty}">
+                            <label>Language</label>
+                            <input name="language" ng-model="countryName.language" type="text" class="form-control" required autofocus>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group" ng-class="{ 'has-error' : form.languageAlpha3Code.$invalid && form.languageAlpha3Code.$dirty}">
+                            <label>Language alpha 3 code</label>
+                            <input name="languageAlpha3Code" ng-model="countryName.languageAlpha3Code" type="text" ng-minlength="3" ng-maxlength="3" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group" ng-class="{ 'has-error' : form.shortName.$invalid && form.shortName.$dirty}">
+                            <label>Short name</label>
+                            <input name="shortName" ng-model="countryName.shortName" type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group" ng-class="{ 'has-error' : form.shortNameUppercase.$invalid && form.shortNameUppercase.$dirty}">
+                            <label>Short name uppercase</label>
+                            <input name="shortNameUppercase" ng-model="countryName.shortNameUppercase" type="text" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group" ng-class="{ 'has-error' : form.fullName.$invalid && form.fullName.$dirty}">
+                            <label>Full name</label>
+                            <input name="fullName" ng-model="countryName.fullName" type="text" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h4>Country's name registered</h4>
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                    <tr>
+                        <th>Language</th>
+                        <th>Language alpha 3 code</th>
+                        <th>Short name</th>
+                        <th>Short name uppercase</th>
+                        <th>Full name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-ng-repeat="item in countryNames">
+                        <th><span ng-bind="item.language"></span></th>
+                        <th><span ng-bind="item.languageAlpha3Code"></span></th>
+                        <th><span ng-bind="item.shortName"></span></th>
+                        <th><span ng-bind="item.shortNameUppercase"></span></th>
+                        <th><span ng-bind="item.fullName"></span></th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a ui-sref="^.dashboard" class="btn btn-default">Cancel</a>
+    </form>
+</section>

@@ -1,0 +1,9 @@
+{
+  "name": "iso3166",
+  "version": "0.0.1",
+  "dependencies": {
+    "restangular": "1.4.0",
+    "underscore": "1.7.0",
+    "angular-ui-grid": "~3.0.0-rc.20"
+  }
+}

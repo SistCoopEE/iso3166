@@ -1,0 +1,68 @@
+<section>
+    <h1>Create country as ISO-3166</h1>
+    <h2>Complete the information:</h2>
+    <form name="form" data-ng-submit="create()" novalidate>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group" ng-class="{ 'has-error' : form.alpha2Code.$invalid && form.alpha2Code.$dirty}">
+                    <label>Alpha 2 code</label>
+                    <input name="alpha2Code" ng-model="country.alpha2Code" type="text" class="form-control" ng-minlength="2" ng-maxlength="2" required autofocus>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group" ng-class="{ 'has-error' : form.alpha3Code.$invalid && form.alpha3Code.$dirty}">
+                    <label>Alpha 3 code</label>
+                    <input name="alpha3Code" ng-model="country.alpha3Code" type="text" class="form-control" ng-minlength="3" ng-maxlength="3" required>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group" ng-class="{ 'has-error' : form.numericCode.$invalid && form.numericCode.$dirty}">
+                    <label>Numeric code</label>
+                    <input name="numericCode" ng-model="country.numericCode" type="text" class="form-control" ng-minlength="3" ng-maxlength="3" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group" ng-class="{ 'has-error' : form.independent.$invalid && form.independent.$dirty}">
+                    <label>Independent</label>
+                    <div class="checkbox">
+                        <label>
+                            <input name="independent" ng-model="country.independent" type="checkbox">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group" ng-class="{ 'has-error' : form.status.$invalid && form.status.$dirty}">
+                    <label>Status</label>
+                    <input name="status" ng-model="country.status" type="text" class="form-control" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group" ng-class="{ 'has-error' : form.shortNameEn.$invalid && form.shortNameEn.$dirty}">
+                    <label>Short name en</label>
+                    <input name="status" ng-model="country.shortNameEn" type="text" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group" ng-class="{ 'has-error' : form.shortNameUppercaseEn.$invalid && form.shortNameUppercaseEn.$dirty}">
+                    <label>Short name uppercase en</label>
+                    <input name="status" ng-model="country.shortNameUppercaseEn" type="text" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group" ng-class="{ 'has-error' : form.fullNameEn.$invalid && form.fullNameEn.$dirty}">
+                    <label>Full name en</label>
+                    <input name="status" ng-model="country.fullNameEn" type="text" class="form-control" required>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a ui-sref="iso3166.searchCountryCode" class="btn btn-default">Cancel</a>
+
+    </form>
+</section>
